@@ -1,0 +1,60 @@
+TASK com.example.runtracker id=2
+  ACTIVITY com.example.runtracker/.RunActivity b119e438 pid=1674
+    Local FragmentActivity b0fb8820 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in b0fb9928:
+      #0: RunFragment{b0feab38 #0 id=0x7f080000}
+        mFragmentId=#7f080000 mContainerId=#7f080000 mTag=null
+        mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=true mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{b0fb9928 in RunActivity{b0fb8820}}
+        mActivity=com.example.runtracker.RunActivity@b0fb8820
+        mContainer=android.widget.FrameLayout{b0fe0100 V.E..... ........ 0,0-768,1038 #7f080000 app:id/fragmentContainer}
+        mView=android.support.v4.app.NoSaveStateFrameLayout{b1009238 V.E..... ........ 0,0-768,315}
+        mInnerView=android.support.v4.app.NoSaveStateFrameLayout{b1009238 V.E..... ........ 0,0-768,315}
+    Added Fragments:
+      #0: RunFragment{b0feab38 #0 id=0x7f080000}
+    FragmentManager misc state:
+      mActivity=com.example.runtracker.RunActivity@b0fb8820
+      mContainer=android.support.v4.app.FragmentActivity$2@b0fba268
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{b0fbb0a8 V.E..... ... 0,0-768,1184}
+        com.android.internal.widget.ActionBarOverlayLayout{b0fbc198 V.ED.... ... 0,0-768,1184 #1020313 android:id/action_bar_overlay_layout}
+          android.widget.FrameLayout{b0fbe1d8 V.E..... ... 0,146-768,1184 #1020002 android:id/content}
+            android.widget.FrameLayout{b0fe0100 V.E..... ... 0,0-768,1038 #7f080000 app:id/fragmentContainer}
+              android.support.v4.app.NoSaveStateFrameLayout{b1009238 V.E..... ... 0,0-768,315}
+                android.widget.TableLayout{b0ff03f0 V.E..... ... 0,0-768,315}
+                  android.widget.TableRow{b0ff0a50 V.E..... ... 0,0-768,38}
+                    android.widget.TextView{b0ff0e08 V.ED.... ... 0,0-188,38}
+                    android.widget.TextView{b0ff1308 V.ED.... ... 188,0-575,38 #7f080001 app:id/run_startedTextView}
+                  android.widget.TableRow{b0ff1808 V.E..... ... 0,38-768,76}
+                    android.widget.TextView{b0ff1b80 V.ED.... ... 0,0-188,38}
+                    android.widget.TextView{b0ff2088 V.ED.... ... 188,0-575,38 #7f080002 app:id/run_latitudeTextView}
+                  android.widget.TableRow{b0ff2588 V.E..... ... 0,76-768,114}
+                    android.widget.TextView{b0ff2900 V.ED.... ... 0,0-188,38}
+                    android.widget.TextView{b0ff2e08 V.ED.... ... 188,0-575,38 #7f080003 app:id/run_longitudeTextView}
+                  android.widget.TableRow{b0ff3308 V.E..... ... 0,114-768,152}
+                    android.widget.TextView{b0ff3680 V.ED.... ... 0,0-188,38}
+                    android.widget.TextView{b0ff3b88 V.ED.... ... 188,0-575,38 #7f080004 app:id/run_altitudeTextView}
+                  android.widget.TableRow{b0ff4088 V.E..... ... 0,152-768,219}
+                    android.widget.TextView{b0ff4400 V.ED.... ... 0,23-188,61}
+                    android.widget.TextView{b0ff4910 V.ED.... ... 188,0-575,67 #7f080005 app:id/run_durationTextView}
+                  android.widget.LinearLayout{b0ff4e58 V.E..... ... 0,219-768,315}
+                    android.widget.Button{b0ff5308 VFED..C. ... 0,0-384,96 #7f080006 app:id/run_startButton}
+                    android.widget.Button{b1007538 VF.D..C. ... 384,0-768,96 #7f080007 app:id/run_stopButton}
+          com.android.internal.widget.ActionBarContainer{b0fbe758 V.ED.... ... 0,50-768,146 #1020314 android:id/action_bar_container}
+            com.android.internal.widget.ActionBarView{b0fc3ae0 V.E..... ... 0,0-768,96 #1020315 android:id/action_bar}
+              android.widget.LinearLayout{b0fc4290 V.....C. ... 17,0-299,96}
+                com.android.internal.widget.ActionBarView$HomeView{b0fc9808 V.E..... ... 0,0-80,96}
+                  android.widget.ImageView{b0fc9d38 G.ED.... ... 0,0-0,0 #102025a android:id/up}
+                  android.widget.ImageView{b0fcb798 V.ED.... ... 8,16-72,80 #102002c android:id/home}
+                android.widget.LinearLayout{b0fcce18 V.E..... ... 80,23-282,72}
+                  android.widget.TextView{b0fcd310 V.ED.... ... 0,0-186,49 #1020265 android:id/action_bar_title}
+                  android.widget.TextView{b0fce070 G.ED.... ... 0,0-0,0 #1020266 android:id/action_bar_subtitle}
+              com.android.internal.view.menu.ActionMenuView{b10157e0 V.ED.... ... 768,0-768,96}
+            com.android.internal.widget.ActionBarContextView{b0fce7c8 G.E..... ... 0,0-0,0 #1020316 android:id/action_context_bar}
+          com.android.internal.widget.ActionBarContainer{b0fd3a20 G.ED.... ... 0,0-0,0 #1020317 android:id/split_action_bar}
