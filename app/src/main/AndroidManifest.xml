@@ -30,7 +30,7 @@
         </activity>
 
         <receiver
-            android:name=".LocationReceiver"
+            android:name=".TrackingLocationReceiver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.example.runtracker.ACTION_LOCATION" />
