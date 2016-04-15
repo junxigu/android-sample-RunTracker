@@ -68,7 +68,7 @@ public class RunDatabaseHelper extends SQLiteOpenHelper {
                 null, null, null, null, null, COLUMN_RUN_START_DATE + " asc");
         return new RunCursor(wrapped);
     }
-/*
+
     public RunCursor queryRun(long id) {
         Cursor wrapped = getReadableDatabase().query(TABLE_RUN,
                 null, // all columns
@@ -92,7 +92,7 @@ public class RunDatabaseHelper extends SQLiteOpenHelper {
                 "1"); // limit 1
         return new LocationCursor(wrapped);
     }
-*/
+
     /**
      * A convenience class to wrap a cursor that returns rows from the "run" table.
      * The getRun() method will give you a Run instance representing the current row.

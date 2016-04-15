@@ -15,9 +15,10 @@ import android.widget.Toast;
 
 public class RunFragment extends Fragment {
 
+	private static final String ARG_RUN_ID = "RUN_ID";
 	private Button mStartButton, mStopButton;
 	private TextView mStartedTextView, mLatitudeTextView, mLongitudeTextView,
-			mAltitudeTextView, mDurationTextView;
+	mAltitudeTextView, mDurationTextView;
 	private RunManager runManager;
 	private Location mLastLocation;
 	private Run mRun;
@@ -26,6 +27,8 @@ public class RunFragment extends Fragment {
 
 		@Override
 		protected void onLocationReceived(Context context, Location loc) {
+			if (!runManager.isTrackingRun(mRun))
+				return;
 			mLastLocation = loc;
 			if (isVisible())
 				updateUI();
@@ -40,12 +43,30 @@ public class RunFragment extends Fragment {
 
 	};
 
+	public static RunFragment newInstance(long runId) {
+		Bundle args = new Bundle();
+		args.putLong(ARG_RUN_ID, runId);
+		RunFragment rf = new RunFragment();
+		rf.setArguments(args);
+		return rf;
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
 
 		runManager = RunManager.get(getActivity());
+
+		// check for a Run ID as an argument, and find the run
+		Bundle args = getArguments();
+		if (args != null) {
+			long runId = args.getLong(ARG_RUN_ID, -1);
+			if (runId != -1) {
+				mRun = runManager.getRun(runId);
+				mLastLocation = runManager.getLastLocationForRun(runId);
+			}
+		}
 	}
 
 	@Override
@@ -68,7 +89,11 @@ public class RunFragment extends Fragment {
 		mStartButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mRun = runManager.startNewRun();
+				if (mRun == null) {
+					mRun = runManager.startNewRun();
+				} else {
+					runManager.startTrackingRun(mRun);
+				}
 				updateUI();
 			}
 		});
@@ -101,6 +126,7 @@ public class RunFragment extends Fragment {
 
 	private void updateUI() {
 		boolean started = runManager.isTrackingRun();
+		boolean trackingThisRun = runManager.isTrackingRun(mRun);
 
 		if (mRun != null)
 			mStartedTextView.setText(mRun.getStartDate().toString());
@@ -118,6 +144,6 @@ public class RunFragment extends Fragment {
 		mDurationTextView.setText(Run.formatDuration(durationSeconds));
 
 		mStartButton.setEnabled(!started);
-		mStopButton.setEnabled(started);
+		mStopButton.setEnabled(started && trackingThisRun);
 	}
 }
